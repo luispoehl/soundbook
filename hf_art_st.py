@@ -54,6 +54,7 @@ def main():
         st.image(generated_image, caption="Generated Image", use_column_width=True)
         st.write(f"Query: {query}")
 
+
     if st.button("Save Image and Query"):
         title = generate_uid()
         st.write("i try to save now")
@@ -62,6 +63,12 @@ def main():
             file.write(query)
         st.success("Image and query have been saved successfully!")
 
+    st.download_button(
+        label="Download Image",
+        data=generated_image,
+        file_name=f'{generate_uid()}.png',
+        mime='image/png'
+    )
 
 if __name__ == "__main__":
     main()
