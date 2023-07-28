@@ -55,20 +55,14 @@ def main():
         st.write(f"Query: {query}")
 
 
-    if st.button("Save Image and Query"):
-        title = generate_uid()
-        st.write("i try to save now")
-        st.session_state['generated_image'].save(f"./generated_images/{title}.png")
-        with open(f"./generated_images/{title}.txt", "w") as file:
-            file.write(query)
-        st.success("Image and query have been saved successfully!")
+   #if st.button("Save Image and Query"):
+   #    title = generate_uid()
+   #    st.write("i try to save now")
+   #    st.session_state['generated_image'].save(f"./generated_images/{title}.png")
+   #    with open(f"./generated_images/{title}.txt", "w") as file:
+   #        file.write(query)
+   #    st.success("Image and query have been saved successfully!")
 
-    st.download_button(
-        label="Download Image",
-        data=generated_image,
-        file_name=f'{generate_uid()}.png',
-        mime='image/png'
-    )
 
 if __name__ == "__main__":
     main()
